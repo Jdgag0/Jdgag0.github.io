@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joel David Gago — Portafolio & CV</title>
+  <meta name="description" content="Portafolio y CV minimalista de Joel David Gago: robótica, visión por computadora, ROS2, mapeo semántico y desarrollo de software." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Joel David Gago — Portafolio & CV" />
+  <meta property="og:description" content="Robótica, visión por computadora, ROS2, mapeo semántico, Docker y DevOps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/00000000" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --panel: #11141a;
+      --muted: #8b95a7;
+      --text: #e5e7eb;
+      --accent: #0ea5e9; /* sky-500 */
+      --accent-2: #22d3ee; /* cyan-400 */
+      --ring: rgba(14,165,233,.35);
+      --card: #0f1217;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --panel:#ffffff; --muted:#5b6472; --text:#0b0d10; --card:#ffffff; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%),
+                       radial-gradient(800px 500px at -10% 20%, rgba(14,165,233,.12), transparent 55%), var(--bg);
+         color:var(--text); font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);background:color-mix(in oklab, var(--bg), transparent 70%);border-bottom:1px solid color-mix(in oklab, var(--accent) 30%, transparent);z-index:50}
+    header .brand{display:flex;gap:14px;align-items:center;padding:12px 0}
+    .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:700}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{padding:8px 12px;border-radius:10px;border:1px solid color-mix(in oklab,var(--accent) 30%, transparent);background:color-mix(in oklab,var(--panel), transparent 40%)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:42px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid color-mix(in oklab, var(--accent) 40%, transparent);border-radius:999px;color:var(--muted);background:color-mix(in oklab,var(--panel), transparent 40%)}
+    h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:10px 0 8px}
+    .lead{font-size:clamp(15px,2vw,18px);color:var(--muted)}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--accent) 35%, transparent);background:linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 30%), color-mix(in oklab, var(--panel), transparent 0%)); color:var(--text);font-weight:600}
+    .btn.primary{background:linear-gradient(180deg, color-mix(in oklab, var(--accent) 18%, transparent), transparent); box-shadow:0 0 0 4px var(--ring)}
+    .grid{display:grid;gap:18px}
+    .grid.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .card{background:var(--card);border:1px solid color-mix(in oklab,var(--accent) 25%, transparent);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+    .card h3{margin:0 0 8px}
+    .meta{color:var(--muted);font-size:13px}
+    section{padding:26px 0}
+    .list{display:grid;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid color-mix(in oklab, var(--accent) 35%, transparent);border-radius:999px;padding:6px 10px;background:color-mix(in oklab,var(--panel), transparent 35%);font-size:13px}
+    footer{padding:26px 0;color:var(--muted);border-top:1px dashed color-mix(in oklab, var(--accent) 25%, transparent);margin-top:26px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:880px){ .hero{grid-template-columns:1fr} }
+    @media print{ header, .cta, .badge, nav, footer{display:none!important} body{background:white} .card{break-inside:avoid} }
+  </style>
+  
+  <!-- JSON-LD Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joel David Gago",
+    "url": "https://jdgago.github.io/",
+    "jobTitle": "Robotics & Computer Vision Engineer",
+    "affiliation": {"@type":"CollegeOrUniversity","name":"UNAM"},
+    "sameAs": [
+      "https://github.com/Jdgag0",
+      "https://www.linkedin.com/in/joel-PLACEHOLDER"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap brand">
+      <div class="avatar" aria-hidden="true">JG</div>
+      <div>
+        <strong>Joel David Gago</strong><br>
+        <span class="meta">Robótica · Visión por Computadora · ROS2</span>
+      </div>
+    </div>
+    <nav class="wrap" aria-label="Navegación principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#skills">Skills</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="badge">Disponible para colaborar · CDMX / Remoto</span>
+        <h1>Ingeniero en Robótica & Visión · MSc (UNAM)</h1>
+        <p class="lead">Desarrollo soluciones reproducibles para robots móviles: ROS2, percepción, mapeo semántico, SLAM, Docker/DevContainers y CI. Experiencia con Unitree Go2, TensorFlow/PyTorch y pipelines de entrenamiento.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:joel@example.com">📩 Contactar</a>
+          <a class="btn" href="https://github.com/Jdgag0" target="_blank" rel="noopener">★ GitHub</a>
+          <a class="btn" href="#cv">Descargar CV (PDF)</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Highlights</h3>
+        <ul class="list" style="margin:0;padding-left:18px">
+          <li>ROS2 · Nav2 · sensores (LiDAR, RealSense), mapas semánticos</li>
+          <li>Visión por computadora · Deep Learning (TF/PyTorch)</li>
+          <li>Docker · DevContainers · CI · GitHub Actions</li>
+          <li>Diseño de datasets y entrenamiento (MobileNetV2, CLIP)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos destacados</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3>Go2-Software (Unitree)</h3>
+          <p class="meta">ROS2 · Control & Percepción</p>
+          <p>Paquete de software para el robot Unitree Go2: navegación, percepción y herramientas de despliegue en Docker/DevContainer.</p>
+          <p><a href="https://github.com/Jdgag0/Go2-Software" target="_blank" rel="noopener">Repositorio</a></p>
+        </article>
+        <article class="card">
+          <h3>Semantic Home Mapping</h3>
+          <p class="meta">Tesis MSc · Visión & Mapping</p>
+          <p>Pipeline para segmentación/rotulación semántica de entornos domésticos y fusión de datos para robots de servicio.</p>
+          <p><a href="#" aria-disabled="true">Paper / Demo (pronto)</a></p>
+        </article>
+        <article class="card">
+          <h3>MyCar App</h3>
+          <p class="meta">Android · Kotlin · Datos</p>
+          <p>App para gestión de gastos de vehículo: combustible, mantenimiento y análisis con gráficos.</p>
+          <p><a href="https://github.com/Jdgag0/App-MyCar" target="_blank" rel="noopener">Repositorio</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="card">
+          <h3>Robótica</h3>
+          <div class="list">
+            <span class="pill">ROS2 · Nav2</span>
+            <span class="pill">SLAM / mapeo semántico</span>
+            <span class="pill">Unitree Go2</span>
+            <span class="pill">Sensors: LiDAR, RealSense</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Visión / IA</h3>
+          <div class="list">
+            <span class="pill">PyTorch · TensorFlow</span>
+            <span class="pill">OpenCV</span>
+            <span class="pill">CLIP · MobileNetV2</span>
+            <span class="pill">Data aug & labeling</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Dev & Ops</h3>
+          <div class="list">
+            <span class="pill">Docker · DevContainers</span>
+            <span class="pill">Git · GitHub Actions</span>
+            <span class="pill">Linux · Bash</span>
+            <span class="pill">Python · C++ · Kotlin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiencia & Educación</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Investigación de Maestría — UNAM</h3>
+          <p class="meta">Mapas semánticos para robots de servicio · 2024–2025</p>
+          <ul class="list" style="margin:0;padding-left:18px">
+            <li>Diseño de datasets y pipelines de entrenamiento.</li>
+            <li>Integración ROS2 con percepción y navegación.</li>
+            <li>Evaluación de desempeño y métricas.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Ingeniero / Colaborador — Proyectos de robótica</h3>
+          <p class="meta">ROS2, visión por computadora, automatización</p>
+          <ul class="list" style="margin:0;padding-left:18px">
+            <li>Despliegue reproducible con Docker y CI.</li>
+            <li>Control y percepción en plataformas quadrúpedas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="card">
+        <p>¿Hablamos? Estoy abierto a colaboraciones y roles en robótica, visión por computadora y desarrollo de software.</p>
+        <p><strong>Email:</strong> <a href="mailto:joel@example.com">joel@example.com</a> &nbsp;·&nbsp; <strong>GitHub:</strong> <a href="https://github.com/Jdgag0" target="_blank" rel="noopener">@Jdgag0</a></p>
+      </div>
+    </section>
+
+    <section id="cv" aria-label="Descarga de CV">
+      <h2 class="sr-only">CV</h2>
+      <div class="card">
+        <p>Puedes exportar esta página como PDF desde tu navegador (<em>Imprimir → Guardar como PDF</em>). Si prefieres un CV en PDF tradicional, coloca el archivo en <code>/assets/JoelDavidGago-CV.pdf</code> y apunta el botón “Descargar CV (PDF)”.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="y"></span> Joel David Gago · Hecho con HTML/CSS puro, accesible y responsivo.</p>
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
